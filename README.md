@@ -1,2 +1,2 @@
-# movies-rest-api
-A movies REST API 
+# anime-rest-api
+A REST API for animes
