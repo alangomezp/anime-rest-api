@@ -1,13 +1,16 @@
 import express from 'express'
 import { AnimesController } from '../controllers/animes-controller.js'
 
-const animesRouter = express.Router()
+export const createAnimesRouter = (AnimesModel) => {
+  const animesRouter = express.Router()
+  const animesController = new AnimesController(AnimesModel)
 
-animesRouter.get('/', AnimesController.getAll)
-  .post('/', AnimesController.create)
+  animesRouter.get('/', animesController.getAll)
+    .post('/', animesController.create)
 
-animesRouter.get('/:id', AnimesController.getById)
-  .patch('/:id', AnimesController.update)
-  .delete('/:id', AnimesController.delete)
+  animesRouter.get('/:id', animesController.getById)
+    .patch('/:id', animesController.update)
+    .delete('/:id', animesController.delete)
 
-export default animesRouter
+  return animesRouter
+}

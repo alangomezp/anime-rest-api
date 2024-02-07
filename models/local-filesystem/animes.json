@@ -2,23 +2,23 @@
   {
     "id": "c22d459c-a42b-444f-97f1-a5d03a088e81",
     "title": "Attack on Titan",
-    "genre": ["Action, Drama, Fantasy"],
+    "genre": ["Drama", "Fantasy"],
     "episodes": 75,
     "rating": 9.0,
-    "poster": "https://static.wikia.nocookie.net/doblaje/images/9/92/Attack_on_Titan.png/revision/latest?cb=20200512043004&path-prefix=es"
+    "poster": "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/323c82257b2f6567fabbb7bd55bfa753.jpe"
   },
   {
     "id": "c9bae9a5-cd72-42a7-854b-610e03bc4f03",
     "title": "One Piece",
-    "genre": ["Action, Adventure, Comedy"],
+    "genre": ["Action", "Adventure", "Comedy"],
     "episodes": 1000,
     "rating": 8.5,
-    "poster": "https://static.wikia.nocookie.net/doblaje/images/8/8d/One_Piece.png/revision/latest?cb=20190727212440&path-prefix=es"
+    "poster": "https://pics.filmaffinity.com/One_Piece_Serie_de_TV-647985949-large.jpg"
   },
   {
     "id": "ccb7e918-c4b0-4a70-811a-f20de2b9069a",
     "title": "Naruto",
-    "genre": ["Action, Adventure, Fantasy"],
+    "genre": ["Fantasy", "Action"],
     "episodes": 720,
     "rating": 8.0,
     "poster": "https://naruto-official.com/anime/series/naruto1_visual.webp"
@@ -26,7 +26,7 @@
   {
     "id": "5da041eb-e051-4de2-afa5-462627bc1853",
     "title": "Demon Slayer",
-    "genre": ["Action, Supernatural, Drama"],
+    "genre": ["Supernatural"],
     "episodes": 26,
     "rating": 8.7,
     "poster": "https://www.konnichiwafestival.com/wp-content/uploads/2023/01/PC-70x100cm-DSWT2023_LR.jpg"
@@ -34,7 +34,7 @@
   {
     "id": "45f6f268-7e47-49fb-b514-665f6282141e",
     "title": "My Hero Academia",
-    "genre": ["Action, Comedy, Superhero"],
+    "genre": ["Superhero"],
     "episodes": 100,
     "rating": 8.6,
     "poster": "https://m.media-amazon.com/images/M/MV5BYTU2NDBmMjEtZjQwYS00MTk1LWJlZWItZjcwYWZlNGZmMTZmXkEyXkFqcGdeQXVyMTI5NDQxMzQ5._V1_.jpg"

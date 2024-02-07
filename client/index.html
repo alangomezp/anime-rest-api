@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animes</title>
+    <style>
+      * {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        box-sizing: border-box;
+      }
+      :root {
+        color-scheme: light dark;
+      }
+
+      #header {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px;
+      }
+
+      #header > select {
+        background-color: goldenrod;
+        outline: none;
+        border: 1px solid #000;
+        border-radius: 5px;
+        color: #000;
+        padding: 5px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      #gallery {
+        display: flex;
+        height: 100%;
+        margin: 0 auto;
+        background-color: goldenrod;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #gallery > div {
+        margin: 15px;
+        background-color: #000;
+        padding: 20px;
+        border-radius: 10px;
+        color: #fff;
+      }
+
+      #gallery > div > h2 > figure > img {
+        padding-top: 15px;
+        width: 350px;
+        height: 400px;
+      }
+
+      #gallery > div > h2 {
+        text-align: center;
+      }
+
+      span {
+        display: flex;
+        justify-content: space-between;
+        background-color: crimson;
+        padding: 10px;
+        border-radius: 20px;
+        margin-top: 10px;
+      }
+
+      #pages {
+        margin: 10px;
+        text-align: center;
+      }
+
+      #pages > a {
+        font-size: 20px;
+        color: #fff;
+        padding: 5px;
+      }
+
+      #pages > a:link {
+        text-decoration: none;
+      }
+
+      #pages > a:visited {
+        text-decoration: none;
+      }
+      #pages > a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Animes:</h1>
+      <select id="filtro">
+        <option value="">Seleccione un genero</option>
+        <option value="action">Action</option>
+        <option value="comedy">Comedy</option>
+        <option value="drama">Drama</option>
+        <option value="fantasia">Fantasy</option>
+        <option value="superhero">SuperHero</option>
+      </select>
+    </div>
+    <section id="gallery"></section>
+    <div id="pages">
+      <p>Pages:</p>
+      <a href="#" onclick="getAll(1)">1</a>
+      <a href="#" onclick="getAll(2)">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+    </div>
+  </body>
+
+  <script>
+    const getAll = (page) => {
+      fetch(`http://localhost:3000/api/animes?page=${page}`)
+        .then((res) => res.json())
+        .then((res) => {
+          const gallery = document.getElementById("gallery");
+          if (!res.length)
+            return (gallery.innerHTML = "<h1>No se encontraron animes</h1>");
+
+          gallery.innerHTML = "";
+          res.map((item) => {
+            gallery.innerHTML += `<div>
+                          <h2>${item.title}</<h2>
+                          <figure>
+                              <img src=${item.poster} title=portada de ${item.title}/>
+                          </figure>
+                          <span>
+                              <h5>Episodes: ${item.episodes}</h5>
+                              <p>${item.rating}</p>
+                          </span>
+                      </div>`;
+          });
+        });
+    };
+
+    document.getElementById("filtro").addEventListener("change", (e) => {
+      e.preventDefault();
+      const input = document.getElementById("filtro").value;
+
+      if (input === "") return getAll(1);
+
+      fetch(`http://localhost:3000/api/animes?genre=${input}`)
+        .then((res) => res.json())
+        .then((res) => {
+          const gallery = document.getElementById("gallery");
+          gallery.innerHTML = "";
+          if (!res.length)
+            return (gallery.innerHTML = "<h1>No se encontraron animes</h1>");
+
+          res.map((item) => {
+            gallery.innerHTML += `<div>
+                            <h2>${item.title}</<h2>
+                            <figure>
+                                <img src=${item.poster} title=portada de ${item.title}/>
+                            </figure>
+                            <span>
+                                <h5>Episodes: ${item.episodes}</h5>
+                                <p>${item.rating}</p>
+                            </span>
+                        </div>`;
+          });
+        });
+    });
+
+    getAll(1);
+  </script>
+</html>
