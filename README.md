@@ -42,7 +42,7 @@ You can also use the `index.html` file to test the API with the client by runnin
 👤 **Alan Gomez**
 
 - Github: [@alangomezp](https://github.com/alangomezp)
-- LinkedIn: [@alangomezp](https://linkedin.com/in/alangomezp)
+- LinkedIn: [@alangomezp](https://linkedin.com/in/alangomezperalta)
 
 ## 🤝 Contributing
 
